@@ -10,6 +10,7 @@ function App() {
 			<p>Welcome to the demo.</p>
 			<main>
 				<section className="controlArea">
+					{/* MESSAGE */}
 					<div className="data">
 						<label>Message:</label>
 						<input
@@ -19,6 +20,62 @@ function App() {
 							onChange={(e) => store.setMessage(e.target.value)}
 						/>
 						TEST: {store.message}
+					</div>
+
+					{/* COLORS */}
+					<div className="data">
+						<label>Colors:</label>
+						<div>
+							<button onClick={() => store.addColor('blue')}>
+								blue
+							</button>
+							<button onClick={() => store.addColor('red')}>
+								red
+							</button>
+							<button onClick={() => store.addColor('yellow')}>
+								yellow
+							</button>
+						</div>
+						<button onClick={() => store.deleteColor()}>
+							delete color
+						</button>
+						<button onClick={() => store.setColors([])}>
+							delete all colors
+						</button>
+					</div>
+
+					{/* MULTIPLE VALUES */}
+					<div className="data">
+						<label>Change multiple values:</label>
+						<div>
+							<button
+								onClick={() => store.deleteVowelsAndColorRed()}
+							>
+								delete vowels from message and color red from
+								colors
+							</button>
+						</div>
+					</div>
+
+					{/* OBJECT */}
+					<div className="data">
+						<label>Object:</label>
+						<div>
+							<button
+								onClick={() =>
+									store.toggleCurrentUserStatusOnline()
+								}
+							>
+								toggle online status
+							</button>
+							<button
+								onClick={() =>
+									store.toggleCurrentUserStatusEmail()
+								}
+							>
+								toggle email status
+							</button>
+						</div>
 					</div>
 				</section>
 				<section className="dataArea">

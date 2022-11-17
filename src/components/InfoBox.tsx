@@ -9,6 +9,26 @@ export const InfoBox = () => {
 				<label>Message:</label>{' '}
 				<span className="theValue">{store.message}</span>
 			</div>
+			<div className="row">
+				<label>Colors:</label>{' '}
+				<span className="theValue">
+					{store.colors.map((m) => m).join(', ')}
+				</span>
+			</div>
+
+			{/* OBJECT */}
+			<div className="row">
+				<label>User is online:</label>{' '}
+				<span className="theValue">
+					{store.currentUserStatus.isOnline ? 'yes' : 'no'}
+				</span>
+			</div>
+			<div className="row">
+				<label>User's email is valid:</label>{' '}
+				<span className="theValue">
+					{store.currentUserStatus.emailIsConfirmed ? 'yes' : 'no'}
+				</span>
+			</div>
 		</div>
 	);
 };
